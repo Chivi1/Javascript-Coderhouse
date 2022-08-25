@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="recursos/btredondo-min.png" type="image/x-icon">
+    <meta name="keywords" content="Blacktail, Esports, Mendoza, Gaming, Argentina">
+    <meta name="description" content="Sé parte de Blacktail Esports. Blacktail Esports es un equipo semiprofesional de esports con base en Mendoza, Argentina. Actualmente trabajando con la disciplina de League of Legends en busca de ampliar horizontes para el gaming del interior del pais">
+    <title>Blacktail Esports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="destino.css">
+</head>
+<body>
+    <!--Inicio navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="recursos/btblanco-min.png" alt="logo blacktail" width="250" height="auto" class="d-inline-block align-text-top">
+                </a>
+            </div>
+            <button class="navbar-toggler position-absolute top-50 end-0 translate-middle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ps-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipos.html">EQUIPOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">SHOP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="joinus.html">TICKETS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        <!--Fin navbar-->
+        <!--carousel portada-->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="recursos/portadas/1.png" class="d-block w-100" alt="partido1">
+                </div>
+                <div class="carousel-item">
+                    <img src="recursos/portadas/2.png" class="d-block w-100" alt="partido2">
+                </div>
+                <div class="carousel-item">
+                    <img src="recursos/portadas/3.png" class="d-block w-100" alt="partido3">
+                </div>
+                <div class="carousel-item">
+                    <img src="recursos/portadas/4.png" class="d-block w-100" alt="partido4">
+                </div>
+            </div>
+        </div>
+        <!--fin carousel-->
+    <div class="bg-dark bg-gradient py-2">
+        <div class="text-center text-white">
+            <div class="pb-3">
+                <h1>Proximos partidos</h1>
+            </div>
+                <div class="mb-4 mx-5" id="barraBusqueda">
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control" id="buscador" placeholder="¿Que evento buscas?">
+                        <button name="elegir" id="buscar" type="button" class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg></button>
+                    </div>
+                </div>
+            <div id="partidos">
+                <ul id="listaPartidos" class="row row-cols-1 row-cols-md-2 g-4 align-items-center mx-3 px-3">
+                    <!--partido1--> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--script-->
+    <script src="./main.js"></script>
+    <!--SWALERT-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Boostrap script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!--footer-->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-2 border-top bg-dark">
+        <p class="col-md-4 mb-0 text-muted ps-3">© 2022 Blacktail Esports</p>
+        <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="recursos/btredondo-min.png" alt="logo bkt" width="50" height="auto"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <ul class="nav col-md-4 col-sm-1 col-1 justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+            <li class="nav-item"><a href="https://www.instagram.com/blacktailgg/" class="nav-link px-2 text-muted">Instagram</a></li>
+            <li class="nav-item"><a href="https://twitter.com/blacktailgg" class="nav-link px-2 text-muted">Twitter</a></li>
+            <li class="nav-item"><a href="https://www.twitch.tv/blacktailesports" class="nav-link px-2 text-muted">Twitch</a></li>
+            <li class="nav-item"><a href="https://discord.com/invite/y3pcAafSz3" class="nav-link px-2 text-muted">Discord</a></li>
+        </ul>
+        </footer>
+</body>
+</html>
