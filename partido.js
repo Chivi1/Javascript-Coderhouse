@@ -183,8 +183,8 @@ const validarForm = () => {
 
 
 const validarCant = () => {
-    const input = document.getElementById("inputCantidad").value;
-    if(input > 1 && input > 9 ){
+    const input = document.getElementById("inputCantidad");
+    if(input.value > 1 && input.value > 9 || input.value == 0){
         failConfirmar("Error: Cantidad entradas: (solo (1) caracteres del 1 al 9)")
         return false;
     }
