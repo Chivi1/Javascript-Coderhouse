@@ -1,67 +1,31 @@
-const partidosStr = `[
-    {
-        "id":1,
-        "torneo":"The Last Legends",
-        "titulo":"BLACKTAIL vs MAYCAM EVOLVE",
-        "fecha": "24 de septiembre",
-        "precio": 1200,
-        "esport": "League of Legends",
-        "disponibles": true,
-        "cantidad": 10
-    },
-    {
-        "id":2,
-        "torneo":"Valorant Champions",
-        "titulo":"BLACKTAIL vs 9Z",
-        "fecha": "16 de septiembre",
-        "precio": 1500,
-        "esport": "VALORANT",
-        "disponibles": true,
-        "cantidad": 15
-    },
-    {
-        "id":3,
-        "torneo":"Rocket League Championship",
-        "titulo":"BLACKTAIL vs G2 ESPORTS",
-        "fecha": "30 de septiembre",
-        "precio": 900,
-        "esport": "Rocket League",
-        "disponibles": true,
-        "cantidad": 10
-    },
-    {
-        "id":4,
-        "torneo":"Rocket League Championship",
-        "titulo":"BLACKTAIL vs TEAM QUESO",
-        "fecha": "1 de Octubre",
-        "precio": 900,
-        "esport": "Rocket League",
-        "disponibles": true,
-        "cantidad": 10
-    }
-]`
-localStorage.setItem("partidos", partidosStr);
-const partidos = JSON.parse(partidosStr);
-console.log(partidos);
+fetch('partidos.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const partidos = data
+                        partidos.forEach((item) => template += buildTemplate(item));
+                        listaPartidos.innerHTML = template;
+                        const filtrar = () => {
+                            console.log(inputBuscador.value);
+                            const filtered = partidos.filter(x => x.titulo.toLowerCase().includes(inputBuscador.value.toLowerCase()));
+                            let template = "";
+                            console.log(filtered);
+                            filtered.forEach((item) => template += buildTemplate(item));
+                            listaPartidos.innerHTML = template;
+                        }
+                        botonBuscador.addEventListener("click", filtrar);
+                        inputBuscador.addEventListener("keyup", filtrar);
+                        
+                    })   
+                    .catch(error => console.log("ERROR"));
+
+
 const inputBuscador = document.getElementById("buscador");
 const botonBuscador = document.querySelector("#buscar")
 const listaPartidos = document.getElementById("listaPartidos");
 
-const filtrar = () => {
-    console.log(inputBuscador.value);
-    const filtered = partidos.filter(x => x.titulo.toLowerCase().includes(inputBuscador.value.toLowerCase()));
-    let template = "";
-    console.log(filtered);
-    filtered.forEach((item) => template += buildTemplate(item));
-    listaPartidos.innerHTML = template;
-}
-botonBuscador.addEventListener("click", filtrar);
-inputBuscador.addEventListener("keyup", filtrar);
 
 //template para las cards de cada evento 
 let template = "";
-partidos.forEach((item) => template += buildTemplate(item));
-listaPartidos.innerHTML = template;
 
 function buildTemplate(item) {
     return `
@@ -83,8 +47,7 @@ function buildTemplate(item) {
 function navigateToEvent(id) {
     console.log(id);
     window.location = "partido.html?event=" + id
-}
-//card elegida => data => localstorage => partido.html
+};
 
 
 
