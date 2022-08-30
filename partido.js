@@ -131,7 +131,6 @@ fetch('partidos.json')
                             };
                             entradaPdf();
                         };
-                        mostrarCompra();
                     })   
                     .catch(error => console.log("ERROR"));
 
@@ -152,15 +151,17 @@ const mostrarCompra = () => {
     let comprasPrint = JSON.parse(comprasDom);
     comprasPrint.forEach(compra => {
         historial.style.visibility = "visible";
-        listaHistorial.innerHTML = `
+        listaHistorial.innerHTML += `
                             <li>
+                                <div class="mb-3">
                                 <a href="#" class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
+                                    <div class="d-flex w-100 justify-content-between text-center">
                                         <h5 class="mb-1">${compra.titulo}</h5>
                                     </div>
                                     <p class="mb-1">${compra.nombre} - ${compra.dni}</p>
                                     <small class="text-muted">Cantidad de entradas: ${compra.cantidad}</small>
                                 </a>
+                                </div>
                             </li>    
         `
     });

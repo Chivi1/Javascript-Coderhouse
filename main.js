@@ -6,10 +6,10 @@ fetch('partidos.json')
                         listaPartidos.innerHTML = template;
                         const filtrar = () => {
                             console.log(inputBuscador.value);
-                            const filtered = partidos.filter(x => x.titulo.toLowerCase().includes(inputBuscador.value.toLowerCase()));
+                            const filtrado = partidos.filter(x => x.titulo.toLowerCase().includes(inputBuscador.value.toLowerCase()));
                             let template = "";
-                            console.log(filtered);
-                            filtered.forEach((item) => template += buildTemplate(item));
+                            console.log(filtrado);
+                            filtrado.forEach((item) => template += buildTemplate(item));
                             listaPartidos.innerHTML = template;
                         }
                         botonBuscador.addEventListener("click", filtrar);
@@ -23,8 +23,6 @@ const inputBuscador = document.getElementById("buscador");
 const botonBuscador = document.querySelector("#buscar")
 const listaPartidos = document.getElementById("listaPartidos");
 
-
-//template para las cards de cada evento 
 let template = "";
 
 function buildTemplate(item) {
